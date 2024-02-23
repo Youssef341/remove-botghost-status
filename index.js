@@ -1,3 +1,10 @@
+const { GatewayIntentBits, ActivityType, TextChannel, ModalBuilder , TextInputBuilder , TextInputStyle, MessageAttachment, CommandInteraction } = require('discord.js');
+const express = require('express');
+const fs = require('fs');
+const path = require('path');
+const app = express();
+const port = 3000;
+
 const client = new Client({
   intents: [
     GatewayIntentBits.Guilds,
@@ -9,13 +16,6 @@ const client = new Client({
     return GatewayIntentBits[a];
   }),
 });
-
-const { GatewayIntentBits, ActivityType, TextChannel, ModalBuilder , TextInputBuilder , TextInputStyle, MessageAttachment, CommandInteraction } = require('discord.js');
-const express = require('express');
-const fs = require('fs');
-const path = require('path');
-const app = express();
-const port = 3000;
 
 app.get('/', (req, res) => {
   res.send('YaY Your Bot Status Changed✨');
