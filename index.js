@@ -56,6 +56,27 @@ function updateStatusAndSendMessages() {
   currentIndex = (currentIndex + 1) % statusMessages.length;
 }
 
+let autoLineRoom;
+let line;
+
+client.on('messageCreate', message => {
+  if (message.content.startsWith('!setAutoLineRoom')) {
+    autoLineRoom = message.mentions.channels.first();
+    message.reply(`تم تحديد الروم الأوتو لاين على ${autoLineRoom}`);
+  }
+  
+  if (message.content.startsWith('!setLine')) {
+    const args = message.content.split(' ');
+    line = args[1];
+    message.reply(`تم تحديد الخط على ${line}`);
+  }
+  
+  if (autoLineRoom && autoLineRoom.id === message.channel.id && message.content.startsWith(`> - User`,)) {
+
+    message.reply({ files: [line] });
+    }
+});
+
 client.once('ready', () => {
   console.log(`\x1b[36m%s\x1b[0m`, `|    ✅ Bot is ready as ${client.user.tag}`);
   console.log(`\x1b[36m%s\x1b[0m`, `|    ✨HAPPY NEW YEAR MY DEAR FAMILY`);
