@@ -1,4 +1,5 @@
 const { GatewayIntentBits, ActivityType, TextChannel, ModalBuilder , TextInputBuilder , TextInputStyle, MessageAttachment, CommandInteraction } = require('discord.js');
+require('dotenv').config();
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
