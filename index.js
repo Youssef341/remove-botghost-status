@@ -18,7 +18,7 @@ const client = new Client({
     GatewayIntentBits.DirectMessages
   ],
 });
-const { Client, GatewayIntentBits, ActivityType, TextChannel } = require('discord.js');
+const { Client, GatewayIntentBits, ActivityType, TextChannel, , ButtonBuilder , ButtonStyle , ModalBuilder ,ActionRowBuilder , TextInputBuilder , TextInputStyle } = require('discord.js');
 require('dotenv').config();
 const express = require('express');
 const fs = require('fs');
