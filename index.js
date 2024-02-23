@@ -11,11 +11,6 @@ const { GatewayIntentBits, ActivityType, TextChannel, ModalBuilder , TextInputBu
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
-const client = new Client({
-  intents: Object.keys(GatewayIntentBits).map((a) => {
-    return GatewayIntentBits[a];
-  }),
-});
 const app = express();
 const port = 3000;
 
