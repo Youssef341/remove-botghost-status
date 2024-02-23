@@ -1,3 +1,23 @@
+const { startServer } = require("./alive.js");
+const { Client, GatewayIntentBits, ButtonBuilder , ButtonStyle , ModalBuilder ,ActionRowBuilder , TextInputBuilder , TextInputStyle } = require('discord.js');
+const Discord = require('discord.js');
+const {
+  MessageButton,
+  MessageActionRow,
+  MessageEmbed,  
+  EmbedBuilder,
+  MessageAttachment,
+  CommandInteraction,
+  ApplicationCommandOptionType
+} = require('discord.js');
+const client = new Client({
+  intents: [
+    GatewayIntentBits.Guilds,
+    GatewayIntentBits.GuildMessages,
+    GatewayIntentBits.MessageContent,
+    GatewayIntentBits.DirectMessages
+  ],
+});
 const { Client, GatewayIntentBits, ActivityType, TextChannel } = require('discord.js');
 require('dotenv').config();
 const express = require('express');
