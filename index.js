@@ -1,14 +1,4 @@
-const { startServer } = require("./alive.js");
 const Discord = require('discord.js');
-const {
-  MessageButton,
-  MessageActionRow,
-  MessageEmbed,  
-  EmbedBuilder,
-  MessageAttachment,
-  CommandInteraction,
-  ApplicationCommandOptionType
-} = require('discord.js');
 const client = new Client({
   intents: [
     GatewayIntentBits.Guilds,
@@ -17,8 +7,7 @@ const client = new Client({
     GatewayIntentBits.DirectMessages
   ],
 });
-const { Client, GatewayIntentBits, ActivityType, TextChannel, , ButtonBuilder , ButtonStyle , ModalBuilder ,ActionRowBuilder , TextInputBuilder , TextInputStyle } = require('discord.js');
-require('dotenv').config();
+const { Client, GatewayIntentBits, ActivityType, TextChannel, , ButtonBuilder , ButtonStyle , ModalBuilder ,ActionRowBuilder , TextInputBuilder , TextInputStyle, MessageAttachment, ApplicationCommandOptionType , CommandInteraction } = require('discord.js');
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
@@ -29,6 +18,7 @@ const client = new Client({
 });
 const app = express();
 const port = 3000;
+
 app.get('/', (req, res) => {
   res.send('YaY Your Bot Status Changed✨');
 });
