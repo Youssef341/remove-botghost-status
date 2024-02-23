@@ -1,17 +1,15 @@
-const { GatewayIntentBits, ActivityType, TextChannel, ModalBuilder , TextInputBuilder , TextInputStyle, MessageAttachment, CommandInteraction } = require('discord.js');
+const { Client, GatewayIntentBits, ActivityType, TextChannel } = require('discord.js');
 require('dotenv').config();
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
-const app = express();
-const port = 3000;
-
 const client = new Client({
   intents: Object.keys(GatewayIntentBits).map((a) => {
     return GatewayIntentBits[a];
   }),
 });
-
+const app = express();
+const port = 3000;
 app.get('/', (req, res) => {
   res.send('YaY Your Bot Status Changed✨');
 });
@@ -20,7 +18,7 @@ app.listen(port, () => {
   console.log(`🔗 Powered By RTX`);
 });
 
-const statusMessages = ["Watching Antivirus"];
+const statusMessages = ["Watching Foxi Community","Listening to Shaf3ey","Playing 21redrum"];
 
 
 let currentIndex = 0;
@@ -58,27 +56,6 @@ function updateStatusAndSendMessages() {
   currentIndex = (currentIndex + 1) % statusMessages.length;
 }
 
-let autoLineRoom;
-let line;
-
-client.on('messageCreate', message => {
-  if (message.content.startsWith('!setAutoLineRoom')) {
-    autoLineRoom = message.mentions.channels.first();
-    message.reply(`تم تحديد الروم الأوتو لاين على ${autoLineRoom}`);
-  }
-  
-  if (message.content.startsWith('!setLine')) {
-    const args = message.content.split(' ');
-    line = args[1];
-    message.reply(`تم تحديد الخط على ${line}`);
-  }
-  
-  if (autoLineRoom && autoLineRoom.id === message.channel.id && message.content.startsWith(`> - User`,)) {
-
-    message.reply({ files: [line] });
-    }
-});
-
 client.once('ready', () => {
   console.log(`\x1b[36m%s\x1b[0m`, `|    ✅ Bot is ready as ${client.user.tag}`);
   console.log(`\x1b[36m%s\x1b[0m`, `|    ✨HAPPY NEW YEAR MY DEAR FAMILY`);
@@ -91,5 +68,3 @@ client.once('ready', () => {
 });
 
 login();
-
-
