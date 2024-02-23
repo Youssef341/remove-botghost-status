@@ -1,4 +1,3 @@
-const Discord = require('discord.js');
 const client = new Client({
   intents: [
     GatewayIntentBits.Guilds,
@@ -6,7 +5,11 @@ const client = new Client({
     GatewayIntentBits.MessageContent,
     GatewayIntentBits.DirectMessages
   ],
+  intents: Object.keys(GatewayIntentBits).map((a) => {
+    return GatewayIntentBits[a];
+  }),
 });
+
 const { GatewayIntentBits, ActivityType, TextChannel, ModalBuilder , TextInputBuilder , TextInputStyle, MessageAttachment, CommandInteraction } = require('discord.js');
 const express = require('express');
 const fs = require('fs');
