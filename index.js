@@ -7,7 +7,7 @@ const client = new Client({
     GatewayIntentBits.DirectMessages
   ],
 });
-const { GatewayIntentBits, ActivityType, TextChannel, , ButtonBuilder , ButtonStyle , ModalBuilder ,ActionRowBuilder , TextInputBuilder , TextInputStyle, MessageAttachment, ApplicationCommandOptionType , CommandInteraction } = require('discord.js');
+const { GatewayIntentBits, ActivityType, TextChannel, ModalBuilder , TextInputBuilder , TextInputStyle, MessageAttachment, CommandInteraction } = require('discord.js');
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
